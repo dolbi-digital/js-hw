@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>2.2_two_numbers</title>
+    <script type="text/javascript">
+        var A = parseInt(prompt("Введите первое число:", "2"));
+        document.write("Первое число (A): " + A + "<br \>");
+        
+        while(true){
+            var B = parseInt(prompt("Введите второе число:", "4"));
+            if(A<B){
+                document.write("Второе число (B): " + B + "<br \>");
+                break;
+            } 
+            else {
+                alert("А{" + A + "} должно быть меньше B");
+            }
+        }
+        
+        var counter=0;
+        document.write("Все нечетные значения в промежутке от А до B: ");
+        for (var i=A; i<=B; i++){
+            if(i%2!==0){
+                document.write(i + " ");
+            }
+            counter+=i;
+        }
+        document.write("<br /> Cумма всех чисел в промежутке от А до B: " + counter);
+    </script>
+</head>
+<body>
+</body>
+</html>
