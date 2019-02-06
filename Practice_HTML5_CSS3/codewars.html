@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Codewars</title>
+    <style>
+        @font-face {
+            font-family: 'Lato', sans-serif;
+            src: url('https://fonts.googleapis.com/css?family=Lato');
+        }
+        body {
+            margin: 0px;
+        }
+        div {
+            font-family: 'Lato', sans-serif;
+        }
+        p {
+            width: 375px;
+            line-height: 1.6;
+            color: #898989;
+        }
+        h2,h3,h4 {
+            color: #898989;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        .float_right {
+            float: right;
+        }
+        .float_left {
+            float: left;
+        }
+        .clear_both {
+            clear: both;
+        }
+        a.regular:link {
+            color: #444444;
+        }
+        a.regular:visited {
+            color: #444444;
+        }
+        a.red:link {
+            color: #BB432C;
+        }
+        a.red:visited {
+            color: #BB432C;
+        }
+        a.red:hover {
+            color: red;
+        }
+        a {
+            text-decoration: none;
+        }
+        .btn{
+            background-color: #bb432c;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            padding: 9px 10px 7px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 12px;
+            border: 1px solid red;
+            color: white;
+            font-size: 16px;
+        }
+        .btn_mon{
+            background-color: #181818;
+            letter-spacing: 0.6px;
+            margin-left: 10px;
+            margin-top: 10px;
+            padding-top: 10px;
+            padding-bottom: 5px;
+            padding-right: 15px;
+            padding-left: 15px; 
+            text-align: center;
+            border-radius: 6px;
+            color: #B1361E;
+            font-size: 15px;
+            font-weight: bold;
+            width: 90px;
+            height: 20px;
+        }
+        .btn:hover{
+            background-color: crimson;
+        }
+        .btn_mon:hover{
+            background-color: burlywood;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        img#logo {
+            width: 174px;
+            height: 50px;
+            margin: 15px;
+            margin-bottom: 10px;
+        }
+        #header {
+            height: 80px;
+        }
+        ul.header_menu {
+            text-align: right;
+            padding-top: 20px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #monitor {
+            height: 640px;
+        }
+        #monitor_top {
+            height: 410px;
+        }
+        #monitor-text {
+            text-align: center;
+            margin-left: 35px;
+            margin-top: 80px;
+            width: 350px;
+        }
+        #monitor-image {
+            right: 360px;
+            margin-top: 60px;
+            position: absolute;
+        }
+        #monitor-p{
+            width: 350px;
+            color: black;
+            font-size: 22px;
+        }
+        #inside_monitor{
+            right: 388px;
+            margin-top: 90px;
+            width: 647px;
+            height: 375px;
+            background: #282828;
+            position: absolute;
+        }
+        #prog_langs {
+            padding-left: 55px;
+        }
+        #p_mon {
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 17px;
+            padding-left: 136px;
+        }
+        .bg{
+            background: url(bg.jpg);
+        }
+        .bg_left {
+            background: url(bg_left.png);
+            width: 366;
+            height: 410;
+        }
+        .bg_right {
+            background: url(bg_right.png);
+            right: 0px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #languages {
+            height: 100px;
+            padding-left: 400px;
+            padding-top:20px;
+            background: #F3F3F3;
+        }
+        #lang_text {
+            font-size: 11px;
+            padding-left: 220px;
+            line-height: 1.6;
+            color: #898989;
+        }
+        #lang_image {
+            margin-top: 8px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #sharpen {
+            height: 320px;
+            font-size: 20px;
+            margin-left: 400px;
+        }
+        #sharpen-text{
+            width: 500px;
+            height: 290px;
+            margin-top: 20px;
+            text-align: left;
+        }
+        #sharpen-image{
+            width: 500px;
+            height: 260px;
+            margin-top: 50px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #train{
+            height: 347px;
+            text-align: left;
+            font-size: 20px;
+            padding-left: 400px;
+            background: #F3F3F3;
+            text-align: left;
+        }
+        #train-text {
+            width: 500px;
+            height: 295px;
+            margin-top: 50px;
+        }
+        #train-image {
+            width: 500px;
+            height: 347px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #earn {
+            height: 330px;
+            font-size: 20px;
+            margin-left: 400px;
+        }
+        #earn-text{
+            width: 500px;
+            height: 250px;
+            margin-top: 45px;
+        }
+        #earn-image{
+            width: 500px;
+            height: 305px;
+            margin-top: 25px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #gain{
+            height: 357px;
+            text-align: left;
+            font-size: 20px;
+            padding-left: 400px;
+            background: #F3F3F3;
+        }
+        #gain-text {
+            width: 500px;
+            height: 300px;
+            margin-top: 50px;
+            text-align: left;
+
+        }
+        #gain-image {
+            width: 500px;
+            height: 357px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #create {
+            height: 305px;
+            font-size: 20px;
+            margin-left: 400px;
+        }
+        #create-text{
+            width: 500px;
+            height: 250px;
+            margin-top: 40px;
+        }
+        #create-image{
+            width: 500px;
+            margin-top: 50px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #community {
+            height: 640px;
+            text-align: left;
+            font-size: 20px;
+            padding-left: 400px;
+            background: #F3F3F3;
+        }
+        #community_text {
+            width: 404px;
+            background-color: #FFFFFF;
+            margin-right: 150px;
+            margin-bottom: 30px;
+            padding-left: 20px;
+        }
+        #love {
+            margin-left: 370px;
+            padding: 10px;
+        }
+        #join {
+            margin-left: 417px;
+            padding: 40px;
+            padding-top: 30px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #qualified {
+            height: 400px;
+            margin-left: 400px;
+        }
+        #access {
+            width: 500px;
+            height: 250px;
+        }
+        #interact {
+            width: 500px;
+            height: 250px;
+        }
+        #brought {
+            margin-left: 425px;
+        }
+        #learn {
+            margin-left: 410px;
+            padding: 20px;
+        }
+        img#img_qualified {
+            width: 300px;
+            height: 95px;
+        }
+        img#img_access {
+            width: 130px;
+            height: 60px;
+        }
+        img#img_interact {
+            width: 130px;
+            height: 60px;
+        }
+        /*--------------------------------------------------------------------------------------------------------------------------------------*/
+        #footer {
+            font-size: 14px;
+        }
+        #footer_links {
+            float: right;
+        }
+        ul.footer_menu {
+            text-align: center;
+        }
+        li {
+            display: inline;
+            margin-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="float_left">
+            <img src="logo-by-q-c107e5b.png" id="logo">
+        </div>
+            <ul class="header_menu">
+                <li><a href="#" class="regular">For Companies</a></li>
+                <li><a href="#" class="regular">For Educators</a></li>
+                <li><a href="#" class="regular">Log In</a></li>
+                <li><a href="#" class="red">Sign Up</a></li>
+            </ul>
+    </div>
+
+    <div id="monitor">
+        <div id="monitor_top" class="bg">
+            <div class="bg_left float_left"><img src="bg_left.png"></div>
+            <div class="float_left" id="monitor-text">
+                <div><h1>Achieve mastery through challenge</h1></div>
+                <div><p id="monitor-p">Improve your skills by training with others on real code challenges</p></div>
+                <div><a href="#" class="btn">Sign up</a></div>
+            </div>
+            <div class="bg_right float_right"><img src="bg_right.png"></div>
+            <div class="float_left" id="monitor-image">
+                <img src="monitor-8c965420c88fa60912b3124fd7c10753.png">
+            </div>
+            <div id="inside_monitor">
+                <p id="p_mon">To join you must first prove your skills.<br>
+                Choose your language to begin...</p>
+                <div id="prog_langs">
+                    <div><a href="#" class="btn_mon float_left">Clojur</a></div>
+                    <div><a href="#" class="btn_mon float_left">C</a></div>
+                    <div><a href="#" class="btn_mon float_left">C++</a></div>
+                    <div><a href="#" class="btn_mon float_left">C#</a></div><br/>
+                    <div><a href="#" class="btn_mon float_left clear_both">Crystal</a></div>
+                    <div><a href="#" class="btn_mon float_left">Dart</a></div>
+                    <div><a href="#" class="btn_mon float_left">Elixir</a></div>
+                    <div><a href="#" class="btn_mon float_left">F#</a></div><br/>
+                    <div><a href="#" class="btn_mon float_left clear_both">Go</a></div>
+                    <div><a href="#" class="btn_mon float_left">Haskell</a></div>
+                    <div><a href="#" class="btn_mon float_left">Java</a></div>
+                    <div><a href="#" class="btn_mon float_left">JavaScript</a></div><br/>
+                    <div><a href="#" class="btn_mon float_left clear_both">PHP</a></div>
+                    <div><a href="#" class="btn_mon float_left">Pyton</a></div>
+                    <div><a href="#" class="btn_mon float_left">Ruby</a></div>
+                    <div><a href="#" class="btn_mon float_left">Rust</a></div><br/>
+                    <div><a href="#" class="btn_mon float_left clear_both">Shell</a></div>
+                    <div><a href="#" class="btn_mon float_left">SQL</a></div>
+                    <div><a href="#" class="btn_mon float_left">Swift</a></div>
+                    <div><a href="#" class="btn_mon float_left">TypeScript</a></div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div id="languages">
+        <div class="float_left">
+            <h3>Additional Languages:</h3>
+        </div>
+        <div class="float_left" id="lang_image">
+            <img src="additional_languages.png">
+        </div>
+        <div class="clear_both" id="lang_text">
+            *These languages are currently in beta. Once you enlist you will have an opportunity to train with them.
+        </div>
+    </div>
+
+    <div id="sharpen">
+        <div class="float_left" id="sharpen-image">
+            <img src="copy-skills.png">
+        </div>
+        <div class="float_left" id="sharpen-text">
+            <h2>Sharpen your skills</h2>
+            <p>Challenge yourself on kata, created by the community to strengthen different skills. Master your current language of choice, or expand your understanding of a new one.</p>
+        </div>
+    </div>
+
+    <div id="train">
+        <div class="float_left" id="train-text">
+            <h2>Train on kata</h2>
+            <p>Solve the kata with your coding style right in the browser and use test cases (TDD) to check it as you progress. Retrain with new, creative, and optimized approaches.</p>
+        </div>
+        <div class="float_left" id="train-image">
+            <img src="copy-train.png">
+        </div>
+    </div>
+
+    <div id="earn">
+        <div class="float_left" id="earn-image">
+                <img src="copy-rank.png">
+            </div>
+            <div class="float_left" id="earn-text">
+                <h2>Earn ranks and honor</h2>
+                <p>Kata are ranked to approximate difficulty. As you complete higher ranked kata, you progress through the ranks so we can match you with relevant challenges.</p>
+            </div>
+        </div>
+
+    <div id="gain">
+        <div class="float_left" id="gain-text">
+            <h2>Gain collaborative wisdom</h2>
+            <p>Compare your solution with others after each kata for greater understanding. Discuss the kata, best practices, and innovative techniques with the community.</p>
+        </div>
+        <div class="float_left" id="gain-image">
+            <img src="copy-wisdom.png">
+        </div>
+    </div>
+
+    <div id="create">
+        <div class="float_left" id="create-image">
+            <img src="copy-create.png">
+        </div>
+            <div class="float_left" id="create-text">
+                <h2>Create your own kata</h2>
+                <p>Author kata that focus on your interests and train specific skillsets. Challenge the community with your insight and code understanding.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="community">
+        <div id="love">
+            <h2>Community love</h2>
+        </div>
+        <div class="float_left" id="community_text">
+            <p>"I swear, @codewars is better than college"</p>
+            <p>Martin Genev<br/>@cyberseer</p>
+        </div>
+        <div class="float_left" id="community_text">
+            <p>"Perfect Execution Codewars"</p>
+            <p>Kevin Granger<br/>@Kevin_Granger</p>
+        </div>
+        <div class="float_left clear_both" id="community_text">
+            <p>"I forgot to eat dinner, because I was on @codewars. This is addictive"</p>
+            <p>Raf Szalansky<br/>@szalansky</p>
+        </div>
+        <div class="float_left" id="community_text">
+            <p>"@codewars. Extremely well done and an excellent example of mastery learning"</p>
+            <p>Ahmed Omran<br/>@this_ahmed</p>
+        </div>
+        <div class="clear_both" id="join">
+            <a href="#" class="btn">JOIN US</a>
+        </div>
+    </div>
+
+    <div id="qualified">
+        <div id="brought">
+            <h4>Brought to you by</h4>
+        </div>
+        <div class="float_left" id="access">
+            <img src="qualified-logo-gray.svg" id="img_qualified"><br/>
+            <img src="assess-gray.svg" id="img_access">
+            <p>Identify top candidates with automated candidate testing.</p>
+        </div>
+        <div class="float_left" id="interact">
+            <p>Accelerate your technical hiring. Instant setup. Intuitive testing. Real results.</p><br/>
+            <img src="interact-gray.svg" id="img_interact">
+            <p>Phone screen with collaborative coding interviews</p>
+        </div>
+        <div class="clear_both" id="learn">
+            <a href="#" class="btn">Learn more</a>
+        </div>
+    </div>
+
+    <div id="footer">
+        <ul class="footer_menu">
+            <li> &copy; 2019 Codewars</li>
+            <li><a href="#" class="red">About</a></li>
+            <li><a href="#" class="red">API</a></li>
+            <li><a href="#" class="red">Blog</a></li>
+            <li><a href="#" class="red">Privacy</a></li>
+            <li><a href="#" class="red">Terms</a></li>
+            <li><a href="#" class="red">Contact</a></li>
+        </ul>
+    </div>
+</body>
+</html>
