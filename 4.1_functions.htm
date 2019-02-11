@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>4.1_functions</title>
+    <script type="text/javascript">
+        var num1 = +prompt("Введите первое число: ", "10");
+        var num2 = +prompt("Введите второе число: ", "2");
+        var operation = prompt("Введите операцию (+ - * /): ", "+");
+
+        function add(a, b) {
+            return a + b;
+        }
+        function sub(a, b) {
+            return a - b;
+        }
+        function mul(a, b) {
+            return a * b;
+        }
+        function div(a, b) {
+            if(b==0){
+                alert("На ноль делить не желательно!");
+            }
+            return a / b;
+        }
+
+        switch (operation) {
+            case "+":
+                document.write(add(num1, num2));
+                break;
+            case "-":
+                document.write(sub(num1, num2));
+                break;
+            case "*":
+                document.write(mul(num1, num2));
+                break;
+            case "/":
+                document.write(div(num1, num2));
+                break;
+            default:
+                document.write("Неверная операция: " + operation);
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

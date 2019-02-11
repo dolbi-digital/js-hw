@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>3.4_arrays</title>
+    <script type="text/javascript">
+        var array=[0,1,2,3,4,5,6,7,8,9];
+        document.write("Элементы изначального массива: " + array + "<br><hr>");
+
+        var current_position = prompt ("Выберите индекс элемента: ", "2");
+        var future_position = prompt ("На какой индекс вставить элемент: ", "4");
+
+        var element = array.splice(current_position, 1);
+        document.write("Вырезаный элемент: " + element + "<br>");
+        document.write("Текущий индекс: " + current_position + "<br>");
+        document.write("Будущий индекс: " + future_position + "<br><hr>");
+        document.write("Элементы массива после вырезания: " + array + "<br><hr>");
+
+        array.splice(future_position, 0, element);
+        document.write("Элементы массива после вставки: " + array + "<br><hr>");
+    </script>
+</head>
+<body>
+</body>
+</html>

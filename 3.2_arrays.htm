@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>3.2_arrays</title>
+    <script type="text/javascript">
+        var array=[11,4,7,-22, -5, 2, 14, -17, -8, 1, 29, 14];
+        var even=[];
+        var odd=[];
+
+        document.write("Элементы изначального массива: " + array + "<br><hr>");
+
+        for(var i=0; i<array.length; i++){
+            if(array[i]%2==0){
+                even.push(array[i]);
+            }
+            else{
+                odd.push(array[i]);
+            }
+        }
+        
+        document.write("Элементы нечетного массива: " + odd + "<br>");
+        document.write("Элементы четного массива: " + even + "<br><hr>");
+
+        odd.sort(function(a,b){ 
+            return a - b;
+        })
+
+        even.sort(function(a,b){ 
+            return b - a;
+        })
+
+        document.write("Сортировка по возростанию нечетного массива: " + odd + "<br>");
+        document.write("Сортировка по убыванию четного массива: " + even + "<br><hr>");
+        
+        array = odd.concat(even);
+
+        document.write("Элементы большого массива: " + array + "<br>");
+    </script>
+</head>
+<body>
+</body>
+</html>

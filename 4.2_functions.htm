@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>4.2_functions</title>
+    <script type="text/javascript">
+        var num1 = +prompt("Введите число: ", "10");
+        function check() {
+            if(num1 > 0){
+                document.write("Число положительное<br><hr>");
+            }
+            else if(num1 < 0){
+                document.write("Число отрицательное<br><hr>");
+            }
+            else if(num1==0){
+                document.write("Ноль<br><hr>");
+            }
+
+            //----------------------------------------------------------------------------------------------
+            if(num1<2){
+                document.write("0, 1 и минусовые числа<br><hr>");
+             }
+            else if(num1==2){
+                document.write("Число простое<br><hr>");
+            }
+            else if(num1%2==0 || num1%3==0 && num1!=3){
+                document.write("Число составное<br><hr>");
+            }
+            else if(num1%5==0 && num1%5!=0){
+                document.write("Число составное<br><hr>");
+            }
+            else if(num1%7==0 && num1%7!=0){
+                document.write("Число составное<br><hr>");
+            }
+            else{
+                document.write("Число простое<br><hr>");
+            }
+
+            //----------------------------------------------------------------------------------------------
+            if(num1%2==0){
+				document.write("Число " + num1 + " делится на 2 без остатка<br>");
+			}
+			if(num1%3==0){
+				document.write("Число " + num1 + " делится на 3 без остатка<br>");
+			}
+			if(num1%5==0){
+				document.write("Число " + num1 + " делится на 5 без остатка<br>");
+			}
+			if(num1%6==0){
+				document.write("Число " + num1 + " делится на 6 без остатка<br>");
+			}
+			if(num1%9==0){
+				document.write("Число " + num1+ " делится на 9 без остатка");
+			}
+        }
+        check(num1);
+    </script>
+</head>
+<body>
+</body>
+</html>

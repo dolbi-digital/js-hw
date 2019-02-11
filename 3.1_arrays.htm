@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>3.1_arrays</title>
+    <script type="text/javascript">
+        //var array=[99,9,2,0,"sadfsadf","asdfasdf", 44, 66, 77, NaN, "underfined"];
+        var array = [];
+        var number_array = [];
+        while (true){
+             var number = prompt("Введите число: ", "13");
+             if (number==null){
+                 break;
+             }
+             array.push(number);
+        }
+
+        document.write("Элементы массива: " + array + "<br>");
+
+        for(var i=0; i<array.length; i++){
+            array[i]=parseInt(array[i]);
+            //document.write(typeof array[i] + " <br>")
+            if(isNaN(array[i])!==true){
+                number_array.push(array[i]);
+                //array.splice(i,1);  // глючит, если ввести 2 строки подряд, удаляет только одну, нужен допольнительный массив
+                //delete(array[i]);
+            }
+        }
+
+        number_array.sort(function(a,b){
+            return a - b;
+        })
+
+        document.write("Числовые элементы массива: " + number_array + "<br>");
+    </script>
+</head>
+<body>
+</body>
+</html>
