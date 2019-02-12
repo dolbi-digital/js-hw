@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>5.1_objects</title>
+    <script type="text/javascript">
+        var arr = [
+            {name: 'BMW', price: 2300, model: 'X5', color: 'red'},
+            {name: 'Infinity', price: 6500, model: 'FX-35', color: 'white'},
+            {name: 'Honda', price: 3900, model: 'Accord', color: 'blue'},
+            {name: 'Ford', price: 1500, model: 'Focus', color: 'green'},
+            {name: 'BMW', price: 2300, model: 'X5', color: 'orange'},
+            {name: 'Ford', price: 5000, model: 'Fusion', color: 'white'},
+            {name: 'BMW', price: 1900, model: 'X3', color: 'blue'},
+            {name: 'Ford', price: 2300, model: 'Fiesta', color: 'black'},
+            {name: 'Infinity', price: 5300, model: 'FX-45', color: 'black'},
+            {name: 'Honda', price: 2500, model: 'Civic', color: 'red'},
+        ]
+
+        document.write("<h2>вывести все машины в тело документа</h2>");
+        for(var i=0; i<arr.length; i++){
+            document.write("name: " + arr[i].name + " price: " + arr[i].price + " model: " + arr[i].model + " color: " + arr[i].color + "<hr><br>");
+        }
+
+        document.write("<h2>вывести только Ford</h2>");
+        for(var i=0; i<arr.length; i++){
+            if(arr[i].name==="Ford"){
+                document.write("name: " + arr[i].name + " price: " + arr[i].price + " model: " + arr[i].model + " color: " + arr[i].color + "<hr><br>");
+            }
+        }
+
+        document.write("<h2>вывести только те, у которых стоимость более 4000</h2>");
+        for(var i=0; i<arr.length; i++){
+            if(arr[i].price>4000){
+                document.write("name: " + arr[i].name + " price: " + arr[i].price + " model: " + arr[i].model + " color: " + arr[i].color + "<hr><br>");
+            }
+        }
+
+        document.write("<h2>вывести только те, у которых стоимость более 4000 и отсортировать в порядке возрастания цены</h2>");
+        arr.sort(function(a, b){
+            return a.price - b.price;
+        });
+
+        for(var i=0; i<arr.length; i++){
+            if(arr[i].price>4000){
+                document.write("name: " + arr[i].name + " price: " + arr[i].price + " model: " + arr[i].model + " color: " + arr[i].color + "<hr><br>");
+            }
+        }
+
+        document.write("<h2>вывести только белые и синие машины</h2>");
+        for(var i=0; i<arr.length; i++){
+            if(arr[i].color=="red" || arr[i].color=="blue"){
+                document.write("name: " + arr[i].name + " price: " + arr[i].price + " model: " + arr[i].model + " color: " + arr[i].color + "<hr><br>");
+            }
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
