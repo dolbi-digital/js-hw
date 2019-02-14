@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>6.1_function_travel</title>
+    <script type="text/javascript">
+        function travel(numberOfPeople, numberOfDays, country){
+
+            var priceForDay;
+            function definePrice(){
+                switch(country){
+                    case "Египет":
+                    priceForDay=50;
+                    break;
+                    case "Турция":
+                    priceForDay=60;
+                    break;
+                    case "Болгария":
+                    priceForDay=40;
+                    break;
+                    default:
+                    priceForDay=0;
+                    break;
+                }
+            }
+            definePrice();
+            
+            if(numberOfDays<5){
+                document.write("Путевку купить нельзя на период меньше 5 дней!<hr><br>");
+            }
+
+            else if(numberOfPeople<1){
+                document.write("Путевку на 0 человек взять нельзя!<hr><br>");
+            }
+
+            else if(typeof numberOfDays=="string"){
+                country=numberOfDays;
+                definePrice();
+                numberOfDays=7;
+                document.write("Стоимость путевки в " + country + " на " + numberOfDays + " дней на " + numberOfPeople + " го(х) человек равна: " 
+                + numberOfDays * numberOfPeople * priceForDay + "<hr><br>");
+            }
+            
+            else if(priceForDay==0){
+                document.write("Нет путевок в эту страну или ошибка в написании!<hr><br>");
+            }
+
+            else if(numberOfDays>10){
+                document.write("Стоимость путевки в " + country + " на " + numberOfDays + " дней на " + numberOfPeople + " го(х) человек равна: " 
+                + numberOfDays * numberOfPeople * priceForDay * 0.9 + " Скидка 10%! (Изначальная цена: " + numberOfDays * numberOfPeople * priceForDay + ")<hr><br>");
+            }
+                
+            else if(numberOfDays>=5 && numberOfDays<=10){
+                document.write("Стоимость путевки в " + country + " на " + numberOfDays + " дней на " + numberOfPeople + " го(х) человек равна: " 
+                + numberOfDays * numberOfPeople * priceForDay + "<hr><br>");    
+            }
+        }
+
+        travel(1, 3, "Египет");
+        travel(1, "Египет");
+        travel(0, 7, "Египет");
+        travel(1, 10, "Египет");
+        travel(1, 12, "Египет");
+        travel(2, 12, "Турция");
+        travel(1, 12, "США");
+        travel(2, 5, "Болгария");
+        travel(2, "Турция");
+        travel(0, "Турция");
+  
+    </script>
+</head>
+<body>
+</body>
+</html>
