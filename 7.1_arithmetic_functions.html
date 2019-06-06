@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>7.1_arithmetic_functions</title>
+    <script type="text/javascript">
+        var a, b;
+        function enter_numbers(){
+            a = parseInt(prompt("Введите первое число: ", 10));
+            b = parseInt(prompt("Введите второе число: ", 5));
+        }
+        function add(){
+            enter_numbers()
+            alert(a + b);
+        }
+        function sub(){
+            enter_numbers()
+            alert(a - b);
+        }
+        function mul(){
+            enter_numbers()
+            alert(a * b);
+        }
+        function div(){
+            enter_numbers()
+            alert(a / b);
+        }
+    </script>
+</head>
+<body>
+    <button onclick=add()> + </button>
+    <button onclick=sub()> - </button>
+    <button onclick=mul()> * </button>
+    <button onclick=div()> / </button>
+</body>
+</html>

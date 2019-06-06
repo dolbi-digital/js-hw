@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2.3_missed_number</title>
+    <script type="text/javascript"> 
+        
+        var array=[1,2,0,4,5,6,7,8,9]
+        var sumElements = 0;
+        var sumIterations = 0;
+
+        for (var i=1; i<=array.length; i++){
+            sumElements = sumElements + array[i-1]; 
+            sumIterations = sumIterations + i;
+        }
+        
+        var position = sumIterations - sumElements;
+        document.write(position);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

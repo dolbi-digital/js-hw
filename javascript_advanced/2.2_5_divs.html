@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>2.2_5_divs</title>
+    <style>
+        div{
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: red;
+            border: 3px dotted black;
+        }
+        button{
+            clear: both;
+            border-radius: 10px;
+            margin: 20px;
+        }
+    </style>
+    <script type="text/javascript"> 
+        var count = 0;
+        function changeColor(){
+            var div1 = document.getElementsByTagName("div");
+            if(count==0){
+                div1[count].style.background="green";
+                count++
+            }  
+            else if(count==5){
+                div1[count-1].style.background="red";
+                div1[0].style.background="green";
+                count=1;
+            }
+            else{
+                div1[count].style.background="green";
+                div1[count-1].style.background="red";
+                count++
+            } 
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button onclick="changeColor()">Change Color</button>
+</body>
+</html>

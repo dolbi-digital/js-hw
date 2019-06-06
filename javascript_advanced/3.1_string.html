@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>3.1_string</title>
+    <script type="text/javascript"> 
+        var str = "hyper text markup language";
+        document.write("Исходная строка: " + str + "<br>");
+
+        var words = str.split(" ");
+
+        var abbreviatura = new Array();
+        for(var i=0; i<words.length; i++){
+            abbreviatura[i] = words[i].charAt(0);
+        }
+        document.write("Аббревиатура: " + abbreviatura.join("") + "<br>");
+
+        for(var i=0; i<words.length; i++){
+            words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+        }
+        document.write("Большие буквы: " + words.join(" ") );
+    </script>
+</head>
+<body>
+</body>
+</html>

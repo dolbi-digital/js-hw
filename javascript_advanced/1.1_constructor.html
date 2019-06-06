@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>1.1_constructor</title>
+    <script type="text/javascript">
+    /*ДЗ: создать родительский конструктор, У родительского конструктора нужно создать поля (статические - те что будут для всех - одинаковые). 
+    От родителя должно быть наследование 2  функция конструкторов. У каждого дочернего конструктора - по 3 экземпляра. Реализуйте свойства и методы отображения 
+    свойств для каждого наследника. Александр, Дмитрий: континенты и страны*/
+
+        function Territory(name){
+            this.name = name;
+            this.getName = function(){
+                document.write(this.name + "<br />");
+            }
+        }
+
+        function Country(name, capital, largest_city){
+            this.name = name;
+            this.capital = capital;
+            this.largest_city = largest_city;
+            this.cities = function(){
+                document.write("Столица: " + this.capital + "  | Самый большой город: " + this.largest_city + "<br />");
+            }
+        }
+
+        function Continent(name, highest_point){
+            this.name = name;
+            this.highest_point = highest_point;
+            this.mountain = function(){
+                document.write("Самая высокая точка: " + this.highest_point + "<br />");
+            }
+        }
+
+        var territory = new Territory("");
+        Country.prototype = territory;
+        Continent.prototype = territory;
+
+        var USA = new Country("США", "Вашингтон", "Нью-Йорк");
+        USA.getName();
+        USA.cities();
+        var Canada = new Country("Канада", "Оттава", "Торонто");
+        Canada.getName();
+        Canada.cities();
+        var Australia = new Country("Австралия", "Канберра", "Сидней");
+        Australia.getName();
+        Australia.cities();
+
+        var Asia = new Continent("Азия", "Еверест");
+        Asia.getName();
+        Asia.mountain();
+        var SouthAmerica = new Continent("Южная Америка", "Аконкагуа");
+        SouthAmerica.getName();
+        SouthAmerica.mountain();
+        var NorthAmerica = new Continent("Северная Америка", "Денали");
+        NorthAmerica.getName();
+        NorthAmerica.mountain();
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>2.1_lines</title>
+    <script>
+        window.addEventListener("load", init, false);
+      
+        function init() {
+            var canvas = document.getElementById("canvas");
+            var context = canvas.getContext("2d");
+
+            context.beginPath();
+            for(var i=0; i<10; i++){
+                context.moveTo(i*30+100, 70);
+                context.lineTo(i*30+100, 400);
+            }
+
+            for(var j=0; j<10; j++){
+                context.moveTo(70, j*30+100);
+                context.lineTo(400, j*30+100);
+            }
+
+            context.closePath();
+            context.stroke();
+        }
+    </script>
+    <style>
+        canvas {
+            border: 3px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" height="500" width="500">
+        Ваш браузер не поддерживает элемент <i>Canvas</i>
+    </canvas>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>3.2_5_divs</title>
+    <style>
+        div{
+            margin: 20px;
+            width: 100px;
+            height: 100px;
+            float: left;
+            background-color: red;
+            border: 3px dotted black;
+        }
+        button{
+            position: relative;
+            top: 170px;
+            left: -530px;
+            border-radius: 10px;
+            margin: 20px;
+        }
+    </style>
+
+    <script type="text/javascript"> 
+        var count = 0;
+        var countBack = 4;
+        var timerId;
+        var div1 = document.getElementsByTagName("div");
+        
+        function forward(){
+            stop();
+            timerId = setInterval(changeColor, 1000);
+        }
+
+        function backward(){
+            stop();
+            timerId = setInterval(changeColorBack, 1000);
+        }
+
+        function changeColor(){
+            if(count==0){
+                div1[count].style.background="green";
+                count++
+            }  
+            else if(count==5){
+                div1[count-1].style.background="red";
+                div1[0].style.background="green";
+                count=1;
+            }
+            else{
+                div1[count].style.background="green";
+                div1[count-1].style.background="red";
+                count++
+            } 
+        }
+
+        function changeColorBack(){
+            if(countBack==4){
+                div1[countBack].style.background="green";
+                div1[0].style.background="red";
+                countBack--
+            }  
+            else if(countBack==0){
+                div1[countBack].style.background="green";
+                div1[countBack+1].style.background="red";
+                countBack=4;
+            }
+            else{
+                div1[countBack].style.background="green";
+                div1[countBack+1].style.background="red";
+                countBack--
+            } 
+        }
+
+        function stop(){
+            for(var i=0; i<div1.length; i++){
+                div1[i].style.background="red";
+            }
+            clearInterval(timerId);
+        }
+    </script>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <button onclick="forward()">Timer Forward</button>
+    <button onclick="backward()">Timer Backward</button>
+</body>
+</html>

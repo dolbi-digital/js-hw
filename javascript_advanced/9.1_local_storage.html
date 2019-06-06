@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <input type="text" autocomplete="off" placeholder="Enter your name" id='fname'><br />
+    <input type="email" autocomplete="off" id="email" placeholder="Enter your email"><br />
+    <input type="text" autocomplete="off" placeholder="Enter your second name" id="sname"><br />
+    <input type="number" autocomplete="off" placeholder="Enter your age" id="age"><br />
+    <input type="text" autocomplete="off" placeholder="Enter your position" id="position"><br />
+    <button id='add'>Add new user</button><br />
+    <button id='get'>Get user by email</button><br />
+    <button id='delete'>Delete user by email</button><br />
+    <button id='change'>Change user by email</button><br />
+    <button id='getAll'>Get all users</button><br />
+
+    <script>
+        //template for id
+        var $ = function (id) {
+            return document.getElementById(id);
+        }
+        //get inputs
+        var fname = $('fname');
+        var email = $('email');
+        var sname = $('sname');
+        var age = $('age');
+        var position = $('position');
+        $('add').onclick = function () {
+            if (localStorage.getItem(email.value)) {
+                alert('Такой пользователь уже существует в БД');
+            } else {
+
+                var newPerson = {
+                    name: fname.value,
+                    email: email.value,
+                    sname: sname.value,
+                    age: age.value,
+                    position: position.value
+                }
+                localStorage.setItem(email.value, JSON.stringify(newPerson));
+                alert(fname.value + ' ' + sname.value + ' был успешно добавлен в БД');
+                fname.value = '';
+                email.value = '';
+                sname.value = '';
+                age.value = 0;
+                position.value = '';
+            }
+        }
+
+        // 1. Валидация полей при вводе (поля при добавлении, и при редактировании)
+        // 2. После добавления (редактирования) пользователя в БД - очистить поля
+        // 3. При добавлении пользователя с уникальным email - должна выводиться ошибка и не добавлять в хранилище
+        // 4. Получить данные от пользователя можно, введя email (если при вводе почты такого пользователя нет - вывести ошибку)
+        // 5. Удалить пользователя можно по email (если при вводе почты такого пользователя нет - вывести ошибку)
+        // 6. При вводе email, который есть в БД и остальных полях - если пользователь нажимает редактировать - нужно найти пользователя и поменять
+        // имя, или возраст или фамилию или должность
+        // 7. При нажатии получить - всех - на странице отображается список всех клиентов из БД по алфавитному порядку (фамилии)
+        // 8. При успешном добавлении пользователя - отображать информацию.
+        // 9. Переделать все alert на информационное сообщение внутри тела документа (которое пропадает через 4 сек)
+    </script>
+</body>
+
+</html>

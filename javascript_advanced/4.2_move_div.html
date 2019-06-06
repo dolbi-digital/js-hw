@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>4.2_move_div</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border: 3px dotted black;
+            margin: 90px;
+            position: relative;
+        }
+        button{
+            border-radius: 10px;
+            background: goldenrod;
+            width: 70px;
+            height: 30px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var div = document.getElementsByTagName("div")[0];
+            var buttonTop = document.getElementById("top");
+            var buttonLeft = document.getElementById("left");
+            var buttonRight = document.getElementById("right");
+            var buttonBottom = document.getElementById("bottom");
+            var top = 90;
+            var left = 90;
+            
+            buttonTop.onclick = function(){
+                top = top - 20;
+                div.style.marginTop = top + "px";
+            }
+
+            buttonLeft.onclick = function(){
+                left = left - 20;
+                div.style.marginLeft = left + "px";
+            }
+
+            buttonRight.onclick = function(){
+                left = left + 20;
+                div.style.marginLeft = left + "px";
+            }
+
+            buttonBottom.onclick = function(){
+                top += 20;
+                div.style.marginTop = top + "px";;
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="top">Top</button>
+    <button id="left">Left</button>
+    <button id="right">Right</button>
+    <button id="bottom">Bottom</button>
+    <div></div>
+</body>
+</html>

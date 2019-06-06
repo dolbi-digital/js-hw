@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>7.3_function_travel_prompt</title>
+    <script type="text/javascript">
+        function travel() {
+            var amountPerDay;
+            var numberOfPeople = +prompt("Введите количество людей: ", 1);
+            var numberOfDays = +prompt("Введите количество дней: ", 7);
+            var country = prompt("Введите страну: ", "Египет");
+            var totalSum = 0;
+            if (numberOfPeople < 1) {
+                alert('Ошибка, нельзя взять путевку на 0 человек');
+                return;
+            }
+            else {
+                switch (country) {
+                    case 'Египет': {
+                        amountPerDay = 50;
+                        break;
+                    }
+                    case 'Турция': {
+                        amountPerDay = 60;
+                        break;
+                    }
+                    case 'Болгария': {
+                        amountPerDay = 40;
+                        break;
+                    }
+                    default: {
+                        alert('Наше турагенство не поддерживает путевки в ' + country);
+                        return;
+                    }
+                }
+                if (numberOfDays == undefined) {
+                    numberOfDays = 7;
+                }
+                if (numberOfDays < 5) {
+                    alert('Нельзя взять путевку меньше чем на 5 дней.');
+                    return;
+                }
+                totalSum = (numberOfDays > 10) ? numberOfDays * amountPerDay * numberOfPeople * 0.9 : numberOfDays * amountPerDay * numberOfPeople;
+                alert('Поздравляем, путевка найдена. Общая сумма: ' + totalSum);
+            }
+        }
+        travel();
+    </script>
+</head>
+<body>
+</body>
+</html>
