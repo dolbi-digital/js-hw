@@ -137,12 +137,12 @@ document.write(a8.getInfo());
 
 let mustang: Ford = new Ford("Ford Mustang Ecobust");
 mustang.lising = 5;
-mustang.setInfo(80000, 3);
+mustang.setInfo(35000, 3);
 mustang.motto();
 document.write(mustang.getInfo());
 
 let mustang_gt: Ford = new Ford("Ford Mustang GT");
 mustang_gt.lising = 3;
-mustang_gt.setInfo(160000, 5);
+mustang_gt.setInfo(50000, 5);
 mustang_gt.motto();
 document.write(mustang_gt.getInfo());
